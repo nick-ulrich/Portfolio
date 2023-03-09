@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>developernick | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="queries.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
@@ -16,6 +17,23 @@
     ></script>
   </head>
   <body>
+    <div class="mobile-menu-container">
+      <div class="hamburger-icon-container">
+        <i class="fa-solid fa-bars"></i>
+        <button class="contact-button_mobile">Contact Me</button>
+      </div>
+      <section class="mobile-menu">
+        <nav class="mobile-nav-bar">
+          <button class="mobile-nav-link font bio-link_mobile">BIO</button>
+          <button class="mobile-nav-link font projects-link_mobile">
+            PROJECTS
+          </button>
+          <button class="mobile-nav-link font testimonials-link_mobile">
+            TESTIMONIALS
+          </button>
+        </nav>
+      </section>
+    </div>
     <div class="container">
       <div class="top"></div>
       <button class="scroll-to-top cover">
@@ -25,72 +43,223 @@
         <nav class="nav-bar">
           <p class="nav-link bio-link">[0] BIO</p>
           <p class="nav-link projects-link">[1] PROJECTS</p>
-          <a class="nav-link testimonials-link">[2] TESTIMONIALS</a>
+          <p class="nav-link testimonials-link">[2] TESTIMONIALS</p>
         </nav>
         <div class="header-options">
-          <i class="fa-regular fa-sun"></i>
-          <i class="fa-regular fa-moon cover"></i>
           <button class="contact-button">Contact Me</button>
         </div>
       </header>
       <section class="hero">
         <h3>Hello, my name is</h3>
-        <!-- <h1 class="hero-name">Nick Ulrich</h1> -->
-        <h1 class="hero-name"></h1>
+        <h1 class="hero-name name-header">Nick Ulrich</h1>
         <p>Web Developer | HTML Emails</p>
       </section>
       <section class="bio">
+        <h1 class="bio-header header">Bio</h1>
         <div class="bio-child">
-          <h1 class="bio-header">Bio</h1>
-          <p class="bio-copy">
-            I'm a passionate web and html email developer with a strong focus on
-            using the best technologies to create modern web applications.
-            JavaScript is my favorite programming lanuage and I am always eager
-            to learn and grow in my field. In my free time, I enjoy cooking
-            healthy meals to maintain both physical and mental well-being.
+          <p class="bio-copy font">
+            I'm a web and HTML email developer who's always looking to learn
+            something new. With a strong understanding of core web technologies,
+            I seek to contribute to this ever-growing industry. In my free time,
+            I enjoy cooking healthy meals.
           </p>
+          <div class="bio-skills">
+            <div class="row-skills">
+              <div>
+                <i class="fa-brands fa-html5"></i>
+                <p class="font">HTML5</p>
+              </div>
+              <div>
+                <i class="fa-brands fa-css3-alt"></i>
+                <p class="font">CSS3</p>
+              </div>
+              <div>
+                <i class="fa-brands fa-js"></i>
+                <p class="font">JavaScript</p>
+              </div>
+            </div>
+            <div class="row-skills">
+              <div>
+                <i class="fa-brands fa-git-alt"></i>
+                <p class="font">Git</p>
+              </div>
+              <div>
+                <i class="fa-brands fa-figma"></i>
+                <p class="font">Figma</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <img
-          src="https://i.ibb.co/J73c241/profile-smile.jpg"
-          alt="A picture of me"
-          class="bio-pic"
-        />
       </section>
       <section class="projects">
-        <h1 class="projects-header">Projects</h1>
+        <h1 class="projects-header header">Projects</h1>
         <div class="projects-grid">
-          <div class="project-container">Project</div>
-          <div class="project-container">Project</div>
-          <div class="project-container">Project</div>
-          <div class="project-container">Project</div>
+          <div class="project-container">
+            <img src="https://i.ibb.co/xLp4B7D/Stock-Portal-screenshot.png" alt="Stock-Portal-screenshot" class="stock-portal project-img">
+            <h1>StockPortal</h1>
+            <p class="project-details first-row-project-details font">
+              As someone who strives to be more finacially literate, I created
+              this app to inquire about investments and to read up on the latest
+              market news. StockPortal utilizes an API to fetch up-to-date
+              market data.
+            </p>
+            <div class="project-skills font">
+              <p>JavaScript</p>
+              <p>MVC Architecture</p>
+            </div>
+            <div class="buttons_container">
+              <button class="live-button stock-portal font">Live</button>
+              <button class="github-button stock-portal-github font">Github</button>
+            </div>
+          </div>
+          <div class="project-container">
+            <img src="https://i.ibb.co/g73dwgH/Orderly-screenshot.png" alt="Orderly-screenshot" class="orderly project-img">
+            <h1>Orderly</h1>
+            <p class="project-details first-row-project-details font">
+              In a prior position as a receiving associate, I became familiar
+              with inventory management software. My goal with Orderly was to
+              improve off of the shortcomings of that system. This project uses
+              JavaScript with an OOP paradigm.
+            </p>
+            <div class="project-skills font">
+              <p>JavaScript</p>
+              <p>OOP Paradigm</p>
+            </div>
+            <div class="buttons_container">
+              <button class="live-button orderly font">Live</button>
+              <button class="github-button orderly-github font">Github</button>
+            </div>
+          </div>
+          <div class="project-container">
+            <img
+              src="https://i.ibb.co/d6RNppQ/Kate-Spade.png"
+              alt="Kate-Spade"
+              class="katespade project-img"
+            />
+            <h1>Kate Spade Welcome Email</h1>
+            <p class="project-details second-row-project-details font">
+              An email coded for Kate Spade welcoming new customers who signed
+              up for their marketing emails.
+            </p>
+            <div class="buttons_container">
+              <button class="live-button katespade font">Live</button>
+            </div>
+          </div>
+          <div class="project-container">
+            <img
+              src="https://i.ibb.co/MMgs13t/Gucci.png"
+              alt="Gucci"
+              class="gi-img gucci project-img"
+            />
+            <h1>Gucci Italy Cart Email</h1>
+            <p class="project-details second-row-project-details font">
+              A responsive email coded for Gucci Italy reminding a user they
+              left an item in their cart.
+            </p>
+            <div class="buttons_container">
+              <button class="live-button gucci font">Live</button>
+            </div>
+          </div>
+          <div class="project-container">
+            <img
+              src="https://i.ibb.co/C70vtt1/1800-Flowers.png"
+              alt="1800-Flowers"
+              class="flowers project-img"
+            />
+            <h1>1-800 Flowers</h1>
+            <p class="project-details second-row-project-details font">
+              A responsive email coded for 1-800 Flowers reminding a user they
+              left an item in their cart.
+            </p>
+            <div class="buttons_container">
+              <button class="live-button flowers font">Live</button>
+            </div>
+          </div>
+          <div class="project-container">
+            <img
+              src="https://i.ibb.co/bQHWfPN/Apple-Receipt.png"
+              alt="apple receipt"
+              class="applereceipt project-img"
+            />
+            <h1>Apple Receipt</h1>
+            <p class="project-details second-row-project-details font">
+              A personal project that mimicks a real transactional email from
+              Apple's app store.
+            </p>
+            <div class="buttons_container">
+              <button class="live-button applereceipt font">Live</button>
+            </div>
+          </div>
         </div>
       </section>
       <section class="testimonials">
-        <h1 class="testimonials-header">Testimonials</h1>
+        <h1 class="testimonials-header header">Testimonials</h1>
         <div class="testimonial-grid">
-          <blockquote>
+          <blockquote class="quote font">
             "I trust Nick's judgment and decision-making regarding implementing
             new client work. He can translate complicated designs into
             well-coded and functional emails for our brand-sensitive clients."
           </blockquote>
-          <p>Joey Gerovac, Software Engineering Manager</p>
-          <blockquote>
+          <div class="font">
+            <p>Joey Gerovac</p>
+            <p class="title-testimonial">Software Engineering Manager</p>
+          </div>
+          <blockquote class="quote holistic-quote font">
             "A wonderful experience! Working with Nick was amazing
             and&nbsp;easy!"
           </blockquote>
-          <p>Hollistic Kids Foundation, Charitable Organization</p>
+          <div class="font">
+            <p>Hollistic Kids Foundation</p>
+            <p class="title-testimonial">Charitable Organization</p>
+          </div>
+      </section>
+      <section class="contact">
+        <i class="fa-brands contact-icon fa-linkedin"></i>
+        <i class="fa-brands contact-icon fa-github"></i>
+        <i class="fa-solid contact-icon fa-envelope"></i>
+      </section>
+      <section class="email-modal modal">
+        <div class="x-mark_container">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <h1>Send me an email</h1>
+        <div class="email-container">
+          <form
+            action="https://formsubmit.co/nicholasulrich96@gmail.com"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="_next"
+              value="https://developernick.com/thankyou.html"
+            />
+            <input type="hidden" name="_subject" value="New porfolio email" />
+            <div>
+              <input
+                class="email-field email-input"
+                type="email"
+                name="email"
+                required
+                placeholder="Your email address"
+              />
+            </div>
+            <div>
+              <input
+                class="email-message email-input"
+                type="text"
+                name="message"
+                required
+                placeholder="Type your message"
+              />
+            </div>
+            <button class="send-email-button" type="submit" target="_blank">
+              Send
+            </button>
+          </form>
         </div>
       </section>
+      <div class="overlay"></div>
     </div>
     <script src="script-1.js"></script>
   </body>
 </html>
-
-<!-- I'm a passionate web and html email developer with a strong focus on using 
-the best technologies to create modern web applications. JavaScript is my favorite programming lanuage 
-and I am always eager to learn and grow in my field.
- In my free time, I enjoy cooking healthy meals to
-maintain both physical and mental well-being. -->
-
-<!-- Use Coolors to check contrast rating
-https://coolors.co/contrast-checker -->

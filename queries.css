@@ -1,0 +1,70 @@
+@media (max-width: 48em) {
+  .main-header {
+    display: none;
+  }
+  .hamburger-icon-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobile-menu-container {
+    position: sticky;
+    top: 0;
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    font-size: 1.5rem;
+    background-color: #1f2833;
+    z-index: 1;
+  }
+  .contact-button {
+    display: none;
+  }
+  .contact-button_mobile {
+    display: block;
+  }
+  .bio {
+    display: block;
+  }
+  .projects-grid {
+    display: block;
+  }
+  .project-container {
+    width: 75%;
+    margin: 5rem auto;
+  }
+  .bio-skills {
+    display: block;
+    margin: 0;
+  }
+  .row-skills {
+    margin: 5rem 0;
+    gap: 0;
+  }
+  .testimonial-grid {
+    display: block;
+  }
+  .quote {
+    margin: 2.5rem 0;
+  }
+  .holistic-quote {
+    margin-top: 10rem;
+  }
+  .email-input {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .send-email-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 38em) {
+  .name-header {
+    font-size: 7rem;
+  }
+
+  .header {
+    font-size: 4rem;
+  }
+}

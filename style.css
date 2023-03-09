@@ -43,6 +43,12 @@ body {
   right: 50px;
 }
 
+.font {
+  font-family: Roboto Condensed, sans-serif;
+  font-size: 2.5rem;
+  line-height: 40px;
+}
+
 /* Header */
 
 .main-header {
@@ -54,6 +60,11 @@ body {
   padding: 25px;
   font-size: 1.5rem;
   background-color: #1f2833;
+  z-index: 1;
+}
+
+.mobile-menu-container {
+  display: none;
 }
 
 .nav-bar {
@@ -61,10 +72,44 @@ body {
   gap: 5rem;
 }
 
+.mobile-nav-bar {
+  display: block;
+  align-items: center;
+  padding: 2.5rem;
+}
+
+.mobile-nav-bar p {
+  margin: 7.5rem 0;
+  font-size: 3.5rem;
+}
+
+.mobile-menu {
+  color: #3cf1e5;
+  background-color: #1f2833;
+  width: 100%;
+  display: none;
+}
+
+.hamburger-icon-container {
+  display: none;
+}
+
 .nav-link {
   font-family: Source Code Pro;
   text-decoration: none;
   color: #3cf1e5;
+}
+
+.nav-link:hover {
+  cursor: pointer;
+}
+
+.mobile-nav-link {
+  display: block;
+  margin: 10rem 0;
+  color: #3cf1e5;
+  background: none;
+  border: none;
 }
 
 .header-options {
@@ -75,8 +120,12 @@ body {
 .fa-sun,
 .fa-moon {
   font-size: 2rem;
-  color: #3cf1e5;
   line-height: 2;
+}
+
+.fa-bars {
+  font-size: 4rem;
+  color: #3cf1e5;
 }
 
 .fa-sun:hover,
@@ -84,7 +133,8 @@ body {
   cursor: pointer;
 }
 
-.contact-button {
+.contact-button,
+.contact-button_mobile {
   font-family: Roboto Condensed, sans-serif;
   color: #1f2833;
   background-color: #3cf1e5;
@@ -97,14 +147,19 @@ body {
   cursor: pointer;
 }
 
+.contact-button_mobile {
+  display: none;
+}
+
 /* Hero */
 
 .hero {
+  position: relative;
   display: grid;
   align-content: center;
   justify-content: center;
   gap: 1rem;
-  padding: 20rem 0;
+  height: 90vh;
 }
 
 .hero h3 {
@@ -134,12 +189,19 @@ body {
 /* Bio */
 
 .bio {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  align-items: center;
   max-width: 100rem;
   margin: auto;
+  padding-top: 20rem;
+  height: 100vh;
+}
+
+.fa-html5,
+.fa-css3-alt,
+.fa-js,
+.fa-git-alt,
+.fa-figma {
+  font-size: 7rem;
+  color: #3cf1e5;
 }
 
 .bio-header {
@@ -151,9 +213,6 @@ body {
 
 .bio-copy {
   color: #c5c6c7;
-  font-family: Roboto Condensed, sans-serif;
-  font-size: 2rem;
-  line-height: 1.5;
 }
 
 .bio-pic {
@@ -161,19 +220,56 @@ body {
   border-radius: 50%;
 }
 
+.bio-pic-container {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.bio-child {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.bio-skills {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+  gap: 10rem;
+}
+
+.bio-skills div {
+  text-align: center;
+  color: #3cf1e5;
+}
+
+.row-skills {
+  display: flex;
+  justify-content: space-around;
+  gap: 10rem;
+}
+
 /* Projects */
 
 .projects {
+  display: grid;
+  align-items: center;
   max-width: 100rem;
   margin: auto;
+  padding: 10rem 0 0 0;
 }
 
 .projects-header {
+  grid-column: 1/-1;
   font-family: Roboto Condensed, sans-serif;
   font-size: 8rem;
   color: #3cf1e5;
   text-transform: uppercase;
   justify-items: start;
+  margin-bottom: 1.5rem;
 }
 
 .projects-grid {
@@ -183,18 +279,98 @@ body {
   align-items: center;
   max-width: 100rem;
   margin: auto;
-  gap: 5rem;
+  gap: 10rem;
 }
 
 .project-container {
-  background-color: #c5c6c7;
+  height: 100%;
 }
 
-/* testimonials */
+.project-container h1 {
+  font-family: Roboto Condensed, sans-serif;
+  font-size: 3.5rem;
+  color: #c5c6c7;
+  margin: 2.5rem 0;
+}
+
+.project-details {
+  color: #c5c6c7;
+  font-size: 2rem;
+  line-height: 35px;
+}
+
+.first-row-project-details {
+  min-height: 17.5rem;
+}
+
+.second-row-project-details {
+  min-height: 10rem;
+}
+
+.project-container img {
+  width: 100%;
+}
+
+.project-skills {
+  color: #1f2833;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  font-size: 2rem;
+  padding-top: 2rem;
+}
+
+.project-skills p {
+  color: #c5c6c7;
+}
+
+.live-button {
+  background-color: #3cf1e5;
+  color: #1f2833;
+  font-size: 2rem;
+  border: solid;
+  border-color: #3cf1e5;
+  border-radius: 2px;
+  padding: 0 1rem;
+  margin-top: 1.5rem;
+}
+
+.live-button:hover,
+.github-button:hover {
+  cursor: pointer;
+}
+
+.github-button {
+  background-color: #1f2833;
+  color: #3cf1e5;
+  font-size: 2rem;
+  border: solid;
+  border-radius: 2px;
+  border-color: #3cf1e5;
+  padding: 0 1rem;
+  margin-top: 1.5rem;
+}
+
+.gi-img {
+  object-fit: cover;
+  height: 342px;
+}
+
+.buttons_container {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.project-img:hover {
+  cursor: pointer;
+}
+
+/* Testimonials */
 
 .testimonials {
   max-width: 100rem;
   margin: auto;
+  padding: 10rem 0;
 }
 
 .testimonials-header {
@@ -207,16 +383,127 @@ body {
 
 .testimonial-grid {
   display: grid;
-  justify-items: center;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   max-width: 100rem;
-  margin: auto;
+  margin: 1.5rem auto;
   gap: 5rem;
-}
-
-.testimonial-grid {
   color: #c5c6c7;
   font-family: Roboto Condensed, sans-serif;
   font-size: 1.5rem;
   line-height: 1.5;
+}
+
+.testimonial-grid p {
+  text-align: center;
+}
+
+.title-testimonial {
+  font-size: 2rem;
+}
+
+.quote {
+  text-align: center;
+}
+
+/* Contact */
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 50rem;
+  justify-items: center;
+  align-items: center;
+  height: 50vh;
+  margin: auto;
+}
+
+.contact-icon {
+  font-size: 6rem;
+  border-style: none;
+  color: #3cf1e5;
+}
+
+.contact-icon:hover {
+  cursor: pointer;
+}
+
+.email-modal {
+  font-family: Roboto Condensed, sans-serif;
+  text-align: center;
+  padding: 2.5rem;
+  color: #3cf1e5;
+  background-color: red;
+}
+
+.email-modal h1 {
+  font-size: 5rem;
+}
+
+.x-mark_container {
+  display: flex;
+  justify-content: right;
+}
+
+.email-input {
+  width: 40rem;
+  margin: 20px;
+  padding: 10px;
+  line-height: 28px;
+}
+
+.email-container {
+  font-size: 2.5rem;
+}
+
+.send-email-button {
+  font-family: Roboto Condensed, sans-serif;
+  color: #1f2833;
+  background-color: #3cf1e5;
+  padding: 10px;
+  border-style: none;
+  border-radius: 2px;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  bottom: 0.25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  background-color: #1f2833;
+  padding: 2.5rem 5rem 5rem 5rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.fa-xmark {
+  font-size: 2.5rem;
+}
+
+.fa-xmark:hover {
+  cursor: pointer;
+}
+
+.overlay {
+  display: none;
+  opacity: 0.5;
+  background: #c5c6c7;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.send-email-button {
+  width: 30rem;
+  margin: 20px 0;
+}
+
+.send-email-button:hover {
+  cursor: pointer;
 }
